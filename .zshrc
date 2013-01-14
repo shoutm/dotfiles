@@ -6,20 +6,22 @@ export LANG=ja_JP.UTF-8
 ###############################
 # 履歴設定                    #
 ###############################
-HISTFILE=~/.histfile  # ヒストリファイルを指定
-HISTSIZE=10000        # ヒストリに保存するコマンド数
-SAVEHIST=10000        # ヒストリに保存するコマンド数
-setopt auto_pushd     # cd - と入力してTabキーで今までに移動したディレクトリを一覧表示
-setopt hist_no_store  # historyにhistoryコマンドを含めない
+HISTFILE=~/.histfile        # ヒストリファイルを指定
+HISTSIZE=10000              # ヒストリに保存するコマンド数
+SAVEHIST=10000              # ヒストリに保存するコマンド数
+setopt auto_pushd           # cd - と入力してTabキーで今までに移動したディレクトリを一覧表示
+setopt hist_no_store        # historyにhistoryコマンドを含めない
+setopt hist_ignore_dups     # 重複する履歴は含まない
 
 ###############################
 # 補完設定                    #
 ###############################
-zstyle :compinstall filename '/home/monmon/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # 大文字小文字を区別せずに補完
 autoload -Uz compinit; compinit
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'  # 区切り文字としない文字を指定
 setopt list_packed                  # 補完結果を詰めて表示
+#setopt predict-on; predict-on      # 予測補完
 
 ###############################
 # 色指定                      #
@@ -29,8 +31,10 @@ autoload colors; colors
 ###############################
 # PROMPT                      #
 ###############################
-PROMPT='[%n@%m]# '    # default prompt
-RPROMPT=' %~'         # prompt for right side of screen
+# default prompt
+PROMPT="[%n@%m %~]
+%# "
+RPROMPT=' %D{%Y/%m/%d %T}'         # prompt for right side of screen
 
 ###############################
 # keybind(emacsライク)        #
