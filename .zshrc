@@ -32,9 +32,15 @@ autoload colors; colors
 # PROMPT                      #
 ###############################
 # default prompt
-PROMPT="[%n@%m %~]
-%# "
-RPROMPT=' %D{%Y/%m/%d %T}'         # prompt for right side of screen
+PROMPT="[%D{%Y/%m/%d %T} %~]
+%n@%m %# "
+case ${UID} in
+0)
+  PROMPT="%{$fg[yellow]%}[%D{%Y/%m/%d %T} %~]
+%n@%m %# "
+  ;;
+esac
+#RPROMPT=' %D{%Y/%m/%d %T}'         # prompt for right side of screen
 
 ###############################
 # keybind(emacsライク)        #
