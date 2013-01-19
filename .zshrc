@@ -32,8 +32,8 @@ autoload colors; colors
 # PROMPT                      #
 ###############################
 # default prompt
-PROMPT="[%D{%Y/%m/%d %T} %~]
-%n@%m %# "
+PROMPT="%{$fg[cyan]%}[%D{%Y/%m/%d %T} %{$fg[yellow]%}%~%{$fg[cyan]%}]
+%{$fg[white]%}%n@%m %# "
 case ${UID} in
 0)
   PROMPT="%{$fg[yellow]%}[%D{%Y/%m/%d %T} %~]
