@@ -69,4 +69,5 @@ alias uuuuu="cd ../../../../.."
 setopt no_flow_control # C-s, C-qを無効にする
 # RVMの設定
 export PATH=$PATH:$HOME/.rvm/bin 
+export GIT_EDITOR=vim
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
