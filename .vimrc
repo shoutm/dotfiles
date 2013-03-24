@@ -41,6 +41,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'The-NERD-tree'
 "NeoBundle 'The-NERD-Commenter'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " ==========================================
 " = Settings for neocomplcache             = 
