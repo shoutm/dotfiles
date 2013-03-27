@@ -72,3 +72,7 @@ export PATH=$PATH:$HOME/.rvm/bin
 export GIT_EDITOR=vim
 export SVN_EDITOR=vim
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# python settings
+export WORKON_HOME=$HOME/.virtualenvs
+source `which virtualenvwrapper.sh`
