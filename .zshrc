@@ -73,6 +73,9 @@ export GIT_EDITOR=vim
 export SVN_EDITOR=vim
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# python settings
-export WORKON_HOME=$HOME/.virtualenvs
-source `which virtualenvwrapper.sh`
+# pythonz settings
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+# virtualenv settings
+[[ -s $HOME/.virtualenvs ]] && export WORKON_HOME=$HOME/.virtualenvs
+which virtualenvwrapper.sh > /dev/null 
+[[ $? == 0 ]] && source `which virtualenvwrapper.sh`
