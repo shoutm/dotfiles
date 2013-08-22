@@ -63,4 +63,5 @@ set guifont=MigMix\ 1P,MigMix\ 1P\ for\ Powerline:style=Regular
 let g:Powerline_symbols = 'fancy'
 set t_Co=256
 
+syntax on
 filetype plugin indent on
