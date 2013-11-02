@@ -64,8 +64,15 @@ function rprompt-git-current-branch {
 ###############################
 setopt prompt_subst #  PROMPT 変数の中の変数参照をプロンプト表示時に展開
 # default prompt
-PROMPT="%{$fg[cyan]%}[%D{%Y/%m/%d %T} %{$fg[yellow]%}%~%{$fg[cyan]%}]
-%{$fg[white]%}%n@%m %# "
+time_color=cyan
+directory_color=yellow
+prompt_color=white
+# 外部設定がある場合は読み込む
+if [[ -r ~/.zshrc_prompt_color ]]; then
+  . ~/.zshrc_prompt_color
+fi
+PROMPT="%{$fg[$time_color]%}[%D{%Y/%m/%d %T} %{$fg[$directory_color]%}%~%{$fg[$time_color]%}]
+%{$fg[$prompt_color]%}%n@%m %# "
 case ${UID} in
 0)
   PROMPT="%{$fg[yellow]%}[%D{%Y/%m/%d %T} %~]
