@@ -64,6 +64,11 @@ let g:Powerline_symbols = 'fancy'
 set t_Co=256
 
 " ==========================================
+" = Settings for ctags                     = 
+" ==========================================
+set tags=tags;/   "カレントディレクトリから上位に向かってctagsファイルを探して最初に見つけた物を読み込む
+
+" ==========================================
 " = Settings for perl                      = 
 " ==========================================
 autocmd FileType perl setlocal textwidth=0
