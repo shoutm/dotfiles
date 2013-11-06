@@ -67,12 +67,13 @@ setopt prompt_subst #  PROMPT 変数の中の変数参照をプロンプト表�
 time_color=cyan
 directory_color=yellow
 prompt_color=white
+hostname_color=white
 # 外部設定がある場合は読み込む
 if [[ -r ~/.zshrc_prompt_color ]]; then
   . ~/.zshrc_prompt_color
 fi
 PROMPT="%{$fg[$time_color]%}[%D{%Y/%m/%d %T} %{$fg[$directory_color]%}%~%{$fg[$time_color]%}]
-%{$fg[$prompt_color]%}%n@%m %# "
+%{$fg[$prompt_color]%}%n@%B%{$fg[$hostname_color]%}%m%b %{$fg[$prompt_color]%}%# "
 case ${UID} in
 0)
   PROMPT="%{$fg[yellow]%}[%D{%Y/%m/%d %T} %~]
