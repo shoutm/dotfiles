@@ -74,6 +74,8 @@ set t_Co=256
 " = Settings for ctags                     = 
 " ==========================================
 set tags=tags;/   "カレントディレクトリから上位に向かってctagsファイルを探して最初に見つけた物を読み込む
+map <C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " ==========================================
 " = Settings for perl                      = 
