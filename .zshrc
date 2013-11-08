@@ -72,14 +72,13 @@ hostname_color=white
 if [[ -r ~/.zshrc_prompt_color ]]; then
   . ~/.zshrc_prompt_color
 fi
-PROMPT="%{$fg[$time_color]%}[%D{%Y/%m/%d %T} %{$fg[$directory_color]%}%~%{$fg[$time_color]%}]
-%{$fg[$prompt_color]%}%n@%B%{$fg[$hostname_color]%}%m%b %{$fg[$prompt_color]%}%# "
 case ${UID} in
 0)
-  PROMPT="%{$fg[yellow]%}[%D{%Y/%m/%d %T} %~]
-%n@%m %# "
+  prompt_color=red
   ;;
 esac
+PROMPT="%{$fg[$time_color]%}[%D{%Y/%m/%d %T} %{$fg[$directory_color]%}%~%{$fg[$time_color]%}]
+%{$fg[$prompt_color]%}%n%{$fg[white]%}@%B%{$fg[$hostname_color]%}%m%b %{$fg[$prompt_color]%}%# "
 #RPROMPT=' %D{%Y/%m/%d %T}'         # prompt for right side of screen
 RPROMPT='`rprompt-git-current-branch`' # prompt for right side of screen
 
