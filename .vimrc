@@ -84,3 +84,7 @@ autocmd FileType perl setlocal textwidth=0
 
 syntax on
 filetype plugin indent on
+
+if filereadable(expand('~/.vimrc.local'))
+    source ~/.vimrc.local
+endif
