@@ -119,3 +119,8 @@ export SVN_EDITOR=vim
 [[ -s $HOME/.virtualenvs ]] && export WORKON_HOME=$HOME/.virtualenvs
 which virtualenvwrapper.sh > /dev/null 
 [[ $? == 0 ]] && source `which virtualenvwrapper.sh`
+
+# ローカル設定の取り込み
+if [[ -r ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
