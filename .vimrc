@@ -20,6 +20,7 @@ set textwidth=70
 set formatoptions+=m            " マルチバイト文字列でも指定文字数で改行する
 set formatoptions+=B            " 行連結の際、マルチバイトの前後で空白を挿入する
 "set formatoptions+=M            " 行連結の際、マルチバイトの前後で空白を挿入しない
+set hlsearch                    " hilight search results
 
 " ==========================================
 " = Tab settings                           =
