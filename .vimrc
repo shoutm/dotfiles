@@ -60,7 +60,7 @@ imap <C-n> <C-x><C-o>
 " ==========================================
 " = Settings for Nerd Tree                 = 
 " ==========================================
-map <C-b> :NERDTreeToggle<CR>
+"map <C-b> :NERDTreeToggle<CR>
 
 " ==========================================
 " = Settings for vim-powerline             = 
