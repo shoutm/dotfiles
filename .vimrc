@@ -22,6 +22,9 @@ set formatoptions+=B            " 行連結の際、マルチバイトの前後�
 "set formatoptions+=M            " 行連結の際、マルチバイトの前後で空白を挿入しない
 set hlsearch                    " hilight search results
 set wildmode=list,full          " :eの時にzshのように補完候補を出す
+if version >= 704
+  set wildignorecase            " :eの時に大文字小文字関係なくする
+endif 
 
 " ==========================================
 " = Tab settings                           =
