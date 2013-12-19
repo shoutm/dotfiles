@@ -7,6 +7,7 @@ set showmatch
 set showmode
 set nobackup
 set updatecount=0
+set backspace=2                 " make backspace work like most other apps
 " Tab Settings
 set expandtab                   " タブの代わりにスペースを利用
 set tabstop=2                   " ファイル中のタブ文字をスペース何個分で表示するか
@@ -15,12 +16,12 @@ set softtabstop=2               " タブキーを押した際に何文字スペ�
 " Search Settings
 set ignorecase                  " 検索時に大文字小文字を区別しない
 set smartcase                   " 検索時に大文字が入れられた場合、大文字小文字を区別して検索する
+set hlsearch                    " hilight search results
 " Text format settings
 set textwidth=70 
 set formatoptions+=m            " マルチバイト文字列でも指定文字数で改行する
 set formatoptions+=B            " 行連結の際、マルチバイトの前後で空白を挿入する
 "set formatoptions+=M            " 行連結の際、マルチバイトの前後で空白を挿入しない
-set hlsearch                    " hilight search results
 set wildmode=list,full          " :eの時にzshのように補完候補を出す
 if version >= 704
   set wildignorecase            " :eの時に大文字小文字関係なくする
