@@ -31,33 +31,12 @@ autoload colors; colors
 ###############################
 # git setting                 #
 ###############################
-autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
+autoload vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*:*' get-revision true
+zstyle ':vcs_info:git*:*' check-for-changes true
 
-function rprompt-git-current-branch {
-  local name st color gitdir action
-  if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-    return
-  fi
-  name=$(basename "`git symbolic-ref HEAD 2> /dev/null`")
-  if [[ -z $name ]]; then
-    return
-  fi
-
-  gitdir=`git rev-parse --git-dir 2> /dev/null`
-  action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
-
-  st=`git status 2> /dev/null`
-  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-    color=%F{green}
-  elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
-    color=%F{yellow}
-  elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
-    color=%B%F{red}
-  else
-     color=%F{red}
-  fi
-  echo "$color($name)$action%f%b "
-}
+# hash changes branch misc
 
 ###############################
 # PROMPT                      #
@@ -77,10 +56,15 @@ case ${UID} in
   prompt_color=red
   ;;
 esac
+
+# git prompt setings
+zstyle ':vcs_info:git*' formats "%{$fg[$prompt_color]%}[%{$fg[red]%}%u%{$fg[yellow]%}%c%{$fg[$prompt_color]%}] (%b)%m"
+zstyle ':vcs_info:git*' actionformats "%c%u %b%m"
+precmd (){ vcs_info } 
+
 PROMPT="%{$fg[$time_color]%}[%D{%Y/%m/%d %T} %{$fg[$directory_color]%}%~%{$fg[$time_color]%}]
 %{$fg[$prompt_color]%}%n%{$fg[white]%}@%B%{$fg[$hostname_color]%}%m%b %{$fg[$prompt_color]%}%# "
-#RPROMPT=' %D{%Y/%m/%d %T}'         # prompt for right side of screen
-RPROMPT='`rprompt-git-current-branch`' # prompt for right side of screen
+RPROMPT='${vcs_info_msg_0_}'
 
 ###############################
 # keybind(emacsライク)        #
