@@ -55,6 +55,7 @@ NeoBundle 'The-NERD-tree'
 "NeoBundle 'The-NERD-Commenter'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'scrooloose/syntastic'
 
 " ==========================================
 " = Settings for neocomplcache             = 
@@ -75,6 +76,11 @@ set encoding=utf-8 " Necessary to show Unicode glyphs
 set guifont=MigMix\ 1P,MigMix\ 1P\ for\ Powerline:style=Regular
 let g:Powerline_symbols = 'fancy'
 set t_Co=256
+
+" ==========================================
+" = Settings for syntastic                 = 
+" ==========================================
+let g:syntastic_mode_map = {'mode': 'passive'}
 
 " ==========================================
 " = Settings for ctags                     = 
