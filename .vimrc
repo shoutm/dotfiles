@@ -81,6 +81,7 @@ set t_Co=256
 " = Settings for syntastic                 = 
 " ==========================================
 let g:syntastic_mode_map = {'mode': 'passive'}
+cnoreabbrev C SyntasticCheck
 
 " ==========================================
 " = Settings for ctags                     = 
