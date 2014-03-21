@@ -56,6 +56,7 @@ NeoBundle 'The-NERD-tree'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'taglist.vim'
 
 " ==========================================
 " = Settings for neocomplcache             = 
@@ -82,6 +83,11 @@ set t_Co=256
 " ==========================================
 let g:syntastic_mode_map = {'mode': 'passive'}
 cnoreabbrev C SyntasticCheck
+
+" ==========================================
+" = Settings for taglist                   = 
+" ==========================================
+map <C-i> :TlistToggle<CR>
 
 " ==========================================
 " = Settings for ctags                     = 
