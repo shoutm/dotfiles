@@ -28,6 +28,9 @@ if version >= 704
   set wildignorecase            " :eの時に大文字小文字関係なくする
 endif 
 
+" Basic key mapping 
+map <F2> :set invpaste<CR>
+
 " ==========================================
 " = Tab settings                           =
 " ==========================================
