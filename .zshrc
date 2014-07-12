@@ -102,7 +102,7 @@ export SVN_EDITOR=vim
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 # virtualenv settings
 [[ -s $HOME/.virtualenvs ]] && export WORKON_HOME=$HOME/.virtualenvs
-which virtualenvwrapper.sh > /dev/null 
+which virtualenvwrapper.sh > /dev/null 2>&1
 [[ $? == 0 ]] && source `which virtualenvwrapper.sh`
 
 # ローカル設定の取り込み
