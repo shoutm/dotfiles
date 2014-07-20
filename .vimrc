@@ -140,8 +140,8 @@ map <C-i> :TlistToggle<CR>
 set tags=tags;/   "カレントディレクトリから上位に向かってctagsファイルを探して最初に見つけた物を読み込む
 nnoremap <C-]><C-]> g<C-]>
 nnoremap <C-c> :tag<CR>
-nnoremap <C-]>v :vsp <CR><C-w>l:exec("tag ".expand("<cword>"))<CR>
-nnoremap <C-]>h :sp <CR><C-w>j:exec("tag ".expand("<cword>"))<CR>
+nnoremap <C-]>v :vsp <CR><C-w>l g<C-]>
+nnoremap <C-]>h :sp <CR><C-w>j g<C-]>
 nnoremap <C-]>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 " ==========================================
