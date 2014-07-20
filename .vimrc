@@ -104,6 +104,7 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'taglist.vim'
+NeoBundle 'vim-scripts/Tabmerge'
 
 " ==========================================
 " = Settings for neocomplcache             = 
@@ -140,9 +141,11 @@ map <C-i> :TlistToggle<CR>
 " = Settings for ctags                     = 
 " ==========================================
 set tags=tags;/   "カレントディレクトリから上位に向かってctagsファイルを探して最初に見つけた物を読み込む
-map <C-]> g<C-]>
-map <C-c> :tag<CR>
-"map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <C-]><C-]> g<C-]>
+nnoremap <C-c> :tag<CR>
+nnoremap <C-]>v :vsp <CR><C-w>l:exec("tag ".expand("<cword>"))<CR>
+nnoremap <C-]>h :sp <CR><C-w>j:exec("tag ".expand("<cword>"))<CR>
+nnoremap <C-]>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 " ==========================================
 " = Settings for perl                      = 
