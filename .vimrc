@@ -62,7 +62,7 @@ let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
 
 " The prefix key.
 nnoremap    [Tag]   <Nop>
-nmap    <c-w> [Tag]
+nmap    <c-a> [Tag]
 " Tab jump
 for n in range(1, 9)
   execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
