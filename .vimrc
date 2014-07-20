@@ -60,25 +60,22 @@ function! s:my_tabline()  "{{{
 endfunction "}}}
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
 
-" The prefix key.
-nnoremap    [Tag]   <Nop>
-nmap    <c-a> [Tag]
 " Tab jump
 for n in range(1, 9)
-  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+  execute 'nmap <silent> <c-w>'.n  ':<C-u>tabnext'.n.'<CR>'
 endfor
 " t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
 
-map <silent> [Tag]c :tablast <bar> tabnew<CR>
-map <silent> [Tag]<c-c> :tablast <bar> tabnew<CR>
+map <silent> <c-w>c :tablast <bar> tabnew<CR>
+map <silent> <c-w><c-c> :tablast <bar> tabnew<CR>
 " tc 新しいタブを一番右に作る
-"map <silent> [Tag]x :tabclose<CR>
+"map <silent> <c-w>x :tabclose<CR>
 " tx タブを閉じる
-map <silent> [Tag]n :tabnext<CR>
-map <silent> [Tag]<c-n> :tabnext<CR>
+map <silent> <c-w>n :tabnext<CR>
+map <silent> <c-w><c-n> :tabnext<CR>
 " tn 次のタブ
-map <silent> [Tag]p :tabprevious<CR>
-map <silent> [Tag]<c-p> :tabprevious<CR>
+map <silent> <c-w>p :tabprevious<CR>
+map <silent> <c-w><c-p> :tabprevious<CR>
 " tp 前のタブ
 
 " ==========================================
