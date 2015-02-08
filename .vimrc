@@ -8,6 +8,7 @@ set showmode
 set nobackup
 set updatecount=0
 set backspace=2                 " make backspace work like most other apps
+colorscheme default
 " Tab Settings
 set expandtab                   " タブの代わりにスペースを利用
 set tabstop=2                   " ファイル中のタブ文字をスペース何個分で表示するか
@@ -19,11 +20,15 @@ set smartcase                   " 検索時に大文字が入れられた場合�
 set hlsearch                    " hilight search results
 hi Search ctermbg=29            " hilight search background color
 " Text format settings
-set textwidth=70 
+set textwidth=0 
+set colorcolumn=80              " 80文字目にラインを入れる
+set list                        " 不可視文字の可視化
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 set formatoptions+=m            " マルチバイト文字列でも指定文字数で改行する
 set formatoptions+=B            " 行連結の際、マルチバイトの前後で空白を挿入する
 "set formatoptions+=M            " 行連結の際、マルチバイトの前後で空白を挿入しない
 set wildmode=list,full          " :eの時にzshのように補完候補を出す
+set infercase                   " 補完時に大文字小文字を区別しない
 if version >= 704
   set wildignorecase            " :eの時に大文字小文字関係なくする
 endif 
@@ -95,29 +100,33 @@ endif
 " ==========================================
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
-"NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite.vim'
 "NeoBundle 'Shougo/vimproc'
-NeoBundle 'The-NERD-tree'
+"NeoBundle 'The-NERD-tree'
 "NeoBundle 'The-NERD-Commenter'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'taglist.vim'
 NeoBundle 'vim-scripts/Tabmerge'
+"NeoBundle "nathanaelkane/vim-indent-guides"
 
 " ==========================================
-" = Settings for neocomplcache             = 
+" = Settings for neocomplcache             =
 " ==========================================
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
 imap <C-n> <C-x><C-o>
 
 " ==========================================
-" = Settings for Nerd Tree                 = 
+" = Settings for VimFiler                  =
 " ==========================================
-"map <C-b> :NERDTreeToggle<CR>
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_edit_action = 'tabopen'
+nnoremap <TAB> :VimFilerExplorer<CR>
 
 " ==========================================
-" = Settings for vim-powerline             = 
+" = Settings for vim-powerline             =
 " ==========================================
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
@@ -126,18 +135,18 @@ let g:Powerline_symbols = 'fancy'
 set t_Co=256
 
 " ==========================================
-" = Settings for syntastic                 = 
+" = Settings for syntastic                 =
 " ==========================================
 let g:syntastic_mode_map = {'mode': 'passive'}
 cnoreabbrev C SyntasticCheck
 
 " ==========================================
-" = Settings for taglist                   = 
+" = Settings for taglist                   =
 " ==========================================
 map <C-i> :TlistToggle<CR>
 
 " ==========================================
-" = Settings for ctags                     = 
+" = Settings for ctags                     =
 " ==========================================
 set tags=tags;/   "カレントディレクトリから上位に向かってctagsファイルを探して最初に見つけた物を読み込む
 nnoremap <C-]><C-]> g<C-]>
@@ -145,6 +154,12 @@ nnoremap <C-c> :tag<CR>
 nnoremap <C-]>v :vsp <CR><C-w>l g<C-]>
 nnoremap <C-]>h :sp <CR><C-w>j g<C-]>
 nnoremap <C-]>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+
+" ==========================================
+" = Settings for vim-indent-guides         =
+" ==========================================
+"let g:indent_guides_start_level = 2
+"let g:indent_guides_guide_size = 1
 
 " ==========================================
 " = Settings for perl                      = 
