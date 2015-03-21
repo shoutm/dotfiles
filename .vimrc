@@ -101,7 +101,7 @@ endif
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc'
 "NeoBundle 'The-NERD-tree'
 "NeoBundle 'The-NERD-Commenter'
 NeoBundle 'Shougo/vimfiler.vim'
