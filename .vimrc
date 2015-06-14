@@ -98,6 +98,7 @@ endif
 " ==========================================
 " = NeoBundle                              =
 " ==========================================
+call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
@@ -111,6 +112,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'taglist.vim'
 NeoBundle 'vim-scripts/Tabmerge'
 "NeoBundle "nathanaelkane/vim-indent-guides"
+call neobundle#end()
 
 " ==========================================
 " = Settings for neocomplcache             =
