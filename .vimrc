@@ -111,6 +111,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'taglist.vim'
 NeoBundle 'vim-scripts/Tabmerge'
+NeoBundle "soramugi/auto-ctags.vim"
 "NeoBundle "nathanaelkane/vim-indent-guides"
 call neobundle#end()
 
@@ -146,6 +147,11 @@ cnoreabbrev C SyntasticCheck
 " = Settings for taglist                   =
 " ==========================================
 map <C-i> :TlistToggle<CR>
+
+" ==========================================
+" = Settings for auto-ctags                =
+" ==========================================
+let g:auto_ctags = 1
 
 " ==========================================
 " = Settings for ctags                     =
