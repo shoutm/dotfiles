@@ -1,5 +1,5 @@
 - Vim settings
-  1.How to make ricty font for Vim 
+  1-1.How to make ricty font for Vim (for Linux)
     - Required fonts
       - Inconsolata
         http://levien.com/type/myfonts/Inconsolata.otf
@@ -28,6 +28,10 @@
       $ fontforge -lang=py -script fontpatcher Ricty-Bold.ttf
       $ mv Ricty-Regular-Powerline.ttf ~/.fonts
       $ mv Ricty-Bold-Powerline.ttf ~/.fonts
+
+  1-2.How to make ricty font for Vim (for Mac)
+    - Follow the instructions listed in the page below
+      http://morizyun.github.io/blog/ricty-font-homebrew-mac/
 
   2.Install NeoBundle
     $ mkdir -p ~/.vim/bundle
