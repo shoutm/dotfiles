@@ -112,5 +112,12 @@ if [[ -d "$HOME/.pyenv" ]]; then
   eval "$(pyenv init -)"
 fi
 
+# Auto activation of virtualenv when changing directory
+function chpwd() {
+  if [[ -d .venv ]]; then
+    source .venv/bin/activate
+  fi
+}
+
 # ローカル設定の取り込み
 [[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
