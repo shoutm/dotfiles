@@ -98,13 +98,12 @@ export GIT_EDITOR=vim
 export SVN_EDITOR=vim
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# virtualenv settings
-[[ -s $HOME/.virtualenvs ]] && export WORKON_HOME=$HOME/.virtualenvs
-if [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]] ; then
-  source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+# pyenv settings
+if which pyenv > /dev/null 2>&1; then
+  export PYENV_ROOT=`dirname \`which pyenv\``
+  export PATH=${PYENV_ROOT}:$PATH
+  eval "$(pyenv init -)"
 fi
 
 # ローカル設定の取り込み
-if [[ -r ~/.zshrc.local ]]; then
-  source ~/.zshrc.local
-fi
+[[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
