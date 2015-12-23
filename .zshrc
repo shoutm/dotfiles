@@ -98,10 +98,17 @@ export GIT_EDITOR=vim
 export SVN_EDITOR=vim
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# pyenv settings
-if which pyenv > /dev/null 2>&1; then
-  export PYENV_ROOT=`dirname \`which pyenv\``
-  export PATH=${PYENV_ROOT}:$PATH
+###############################
+# pyenv settings              #
+###############################
+if [[ -d "$HOME/.pyenv" ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  if [[ -d "$HOME/.pyenv/bin" ]]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+  elif which pyenv > /dev/null 2>&1; then
+    PYENV_BIN_PATH=`dirname \`which pyenv\``
+    export PATH=${PYENV_BIN_PATH}:$PATH
+  fi
   eval "$(pyenv init -)"
 fi
 
