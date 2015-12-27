@@ -23,7 +23,7 @@ hi Search ctermbg=29            " hilight search background color
 set textwidth=0 
 set colorcolumn=80              " 80文字目にラインを入れる
 set list                        " 不可視文字の可視化
-set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
+"set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 set formatoptions+=m            " マルチバイト文字列でも指定文字数で改行する
 set formatoptions+=B            " 行連結の際、マルチバイトの前後で空白を挿入する
 "set formatoptions+=M            " 行連結の際、マルチバイトの前後で空白を挿入しない
