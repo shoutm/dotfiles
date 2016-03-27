@@ -152,6 +152,7 @@ map <C-i> :TlistToggle<CR>
 " = Settings for auto-ctags                =
 " ==========================================
 let g:auto_ctags = 1
+let g:auto_ctags_filetype_mode = 1
 
 " ==========================================
 " = Settings for ctags                     =
