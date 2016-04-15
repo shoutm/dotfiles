@@ -112,6 +112,20 @@ if [[ -d "$HOME/.pyenv" ]]; then
   eval "$(pyenv init -)"
 fi
 
+###############################
+# rbenv settings              #
+###############################
+if [[ -d "$HOME/.rbenv" ]]; then
+  export RBENV_ROOT="$HOME/.rbenv"
+  if [[ -d "$HOME/.rbenv/bin" ]]; then
+    export PATH=${RBENV_ROOT}/bin:$PATH
+  elif which rbenv > /dev/null 2>&1; then
+    RBENV_BIN_PATH=`dirname \`which rbenv\``
+    export PATH=${RBENV_BIN_PATH}:$PATH
+  fi
+  eval "$(rbenv init -)"
+fi
+
 # Auto activation of virtualenv when changing directory
 function chpwd() {
   if [[ -d .venv ]]; then
