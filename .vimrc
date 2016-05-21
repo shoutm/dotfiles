@@ -36,6 +36,10 @@ endif
 " Basic key mapping 
 map <F2> :set invpaste<CR>
 
+" Allow local config in each directories
+set exrc
+set secure
+
 " ==========================================
 " = Tab settings                           =
 " ==========================================
@@ -103,17 +107,15 @@ NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
-"NeoBundle 'The-NERD-tree'
-"NeoBundle 'The-NERD-Commenter'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'taglist.vim'
-NeoBundle 'vim-scripts/Tabmerge'
-NeoBundle "soramugi/auto-ctags.vim"
-"NeoBundle "nathanaelkane/vim-indent-guides"
+NeoBundle 'szw/vim-tags'
+NeoBundle 'tpope/vim-endwise'
 call neobundle#end()
+
 
 " ==========================================
 " = Settings for neocomplcache             =
@@ -149,15 +151,9 @@ cnoreabbrev C SyntasticCheck
 map <C-i> :TlistToggle<CR>
 
 " ==========================================
-" = Settings for auto-ctags                =
-" ==========================================
-let g:auto_ctags = 1
-let g:auto_ctags_filetype_mode = 1
-
-" ==========================================
 " = Settings for ctags                     =
 " ==========================================
-set tags=tags;/   "カレントディレクトリから上位に向かってctagsファイルを探して最初に見つけた物を読み込む
+set tags=./tags;   "カレントディレクトリから上位に向かってctagsファイルを探して最初に見つけた物を読み込む
 nnoremap <C-]><C-]> g<C-]>
 nnoremap <C-c> :tag<CR>
 nnoremap <C-]>v :vsp <CR><C-w>l g<C-]>
@@ -165,10 +161,9 @@ nnoremap <C-]>h :sp <CR><C-w>j g<C-]>
 nnoremap <C-]>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 " ==========================================
-" = Settings for vim-indent-guides         =
+" = Settings for vim-tags                  =
 " ==========================================
-"let g:indent_guides_start_level = 2
-"let g:indent_guides_guide_size = 1
+map <F5> :TagsGenerate!<CR>
 
 " ==========================================
 " = Settings for perl                      = 
