@@ -114,6 +114,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'taglist.vim'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'fatih/vim-go'
 call neobundle#end()
 
 
