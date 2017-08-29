@@ -126,6 +126,20 @@ if [[ -d "$HOME/.rbenv" ]]; then
   eval "$(rbenv init -)"
 fi
 
+###############################
+# goenv settings              #
+###############################
+if [[ -d "$HOME/.goenv" ]]; then
+  export GOENV_ROOT="$HOME/.goenv"
+  if [[ -d "$HOME/.goenv/bin" ]]; then
+    export PATH=${GOENV_ROOT}/bin:$PATH
+  elif which goenv > /dev/null 2>&1; then
+    GOENV_BIN_PATH=`dirname \`which goenv\``
+    export PATH=${GOENV_BIN_PATH}:$PATH
+  fi
+  eval "$(goenv init -)"
+fi
+
 # Auto activation of virtualenv when changing directory
 function chpwd() {
   if [[ -d .venv ]]; then
