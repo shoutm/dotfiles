@@ -6,6 +6,7 @@ set number
 set showmatch
 set showmode
 set nobackup
+set hidden
 set updatecount=0
 set backspace=2                 " make backspace work like most other apps
 colorscheme default
