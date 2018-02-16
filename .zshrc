@@ -89,14 +89,23 @@ alias uuuu="cd ../../../.."
 alias uuuuu="cd ../../../../.."
 
 ###############################
+# peco settings               #
+###############################
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
+###############################
 # その他                      #
 ###############################
 setopt no_flow_control # C-s, C-qを無効にする
-# RVMの設定
-export PATH=$PATH:$HOME/.rvm/bin 
 export GIT_EDITOR=vim
 export SVN_EDITOR=vim
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 ###############################
 # pyenv settings              #
