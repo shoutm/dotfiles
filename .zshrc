@@ -92,9 +92,13 @@ alias uuuuu="cd ../../../../.."
 # peco settings               #
 ###############################
 function peco-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-    CURSOR=$#BUFFER
-    zle reset-prompt
+  if [[ $(uname -s) == 'Darwin' ]]; then
+    BUFFER=`history -n 1 | tail -r | awk '!a[$0]++' | peco`
+  elif [[ $(uname -s) == 'Linux' ]]; then
+    BUFFER=`history -n 1 | tac | awk '!a[$0]++' | peco`
+  fi
+  CURSOR=$#BUFFER
+  zle reset-prompt
 }
 
 zle -N peco-history-selection
