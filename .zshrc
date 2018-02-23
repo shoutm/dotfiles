@@ -77,6 +77,7 @@ bindkey -e
 # alias                       #
 ###############################
 alias rm="rm -i"
+alias grep="grep --color"
 alias mv="mv -i"
 alias cp="cp -i"
 alias ll="ls -la"
