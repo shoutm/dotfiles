@@ -38,3 +38,8 @@
     $ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
     
     then, start vim and do ":NeoBundleInstall"
+
+- Tmux settings
+  1.Install tmux plugins
+    $ tmux
+    $ ^z I
