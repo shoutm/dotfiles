@@ -1,3 +1,19 @@
+- Zsh(Prezto) settings
+  1. Git clone prezto
+      git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  2. Initial settings
+      $ setopt EXTENDED_GLOB
+      $ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+      >   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+      >  done
+  3. Override .zpreztorc
+      $ cp ~/dotfiles/.zpreztorc ~/
+  4. Make an external module directory
+      $ mkdir ~/.zprezto-contrib
+  5. Git clone external modules
+      - zsh-peco-history
+        $ git clone https://github.com/jimeh/zsh-peco-history.git ~/.zprezto-contrib/
+
 - Vim settings
   1-1.How to make ricty font for Vim (for Linux)
     - Required fonts
