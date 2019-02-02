@@ -12,7 +12,7 @@
       $ mkdir ~/.zprezto-contrib
   5. Git clone external modules
       - zsh-peco-history
-        $ git clone https://github.com/jimeh/zsh-peco-history.git ~/.zprezto-contrib/
+        $ git clone https://github.com/jimeh/zsh-peco-history.git ~/.zprezto-contrib/zsh-peco-history
 
 - Vim settings
   1-1.How to make ricty font for Vim (for Linux)
