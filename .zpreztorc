@@ -38,6 +38,7 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'git' \
   'ruby' \
+  'python' \
   'tmux' \
   'syntax-highlighting' \
   'zsh-peco-history'
