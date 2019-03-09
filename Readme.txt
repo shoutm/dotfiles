@@ -49,11 +49,10 @@
     - Follow the instructions listed in the page below
       http://morizyun.github.io/blog/ricty-font-homebrew-mac/
 
-  2.Install NeoBundle
-    $ mkdir -p ~/.vim/bundle
-    $ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-    
-    then, start vim and do ":NeoBundleInstall"
+  2.Install Dein
+    $ mkdir -p ~/.cache/dein
+    $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+    $ sh ./installer.sh ~/.cache/dein
 
 - Tmux settings
   1.Install tmux plugins

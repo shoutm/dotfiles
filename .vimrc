@@ -88,36 +88,37 @@ map <silent> <c-w>p :tabprevious<CR>
 map <silent> <c-w><c-p> :tabprevious<CR>
 " tp 前のタブ
 
-" ==========================================
-" = Vim plugin settings                    =
-" ==========================================
-filetype plugin indent off
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
+" ==========================================
+" = Dein settings                          =
+" ==========================================
+" See https://qiita.com/delphinus/items/00ff2c0ba972c6e41542
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-" ==========================================
-" = NeoBundle                              =
-" ==========================================
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'taglist.vim'
-NeoBundle 'szw/vim-tags'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'fatih/vim-go'
-call neobundle#end()
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
+  " Load plugins from toml files
+  let g:rc_dir    = expand('~/')
+  let s:toml      = g:rc_dir . '.dein.toml'
+  let s:lazy_toml = g:rc_dir . '.dein_lazy.toml'
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+if dein#check_install()
+  call dein#install()
+endif
 
 " ==========================================
 " = Settings for neocomplcache             =
@@ -131,21 +132,6 @@ imap <C-n> <C-x><C-o>
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_edit_action = 'tabopen'
 nnoremap <TAB> :VimFilerExplorer<CR>
-
-" ==========================================
-" = Settings for vim-powerline             =
-" ==========================================
-set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show Unicode glyphs
-set guifont=MigMix\ 1P,MigMix\ 1P\ for\ Powerline:style=Regular
-let g:Powerline_symbols = 'fancy'
-set t_Co=256
-
-" ==========================================
-" = Settings for syntastic                 =
-" ==========================================
-let g:syntastic_mode_map = {'mode': 'passive'}
-cnoreabbrev C SyntasticCheck
 
 " ==========================================
 " = Settings for taglist                   =
