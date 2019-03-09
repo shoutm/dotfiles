@@ -23,7 +23,7 @@ repo = 'Shougo/unite.vim'
 repo = 'Shougo/vimfiler.vim'
 
 [[plugins]]
-repo = 'Shougo/neocomplcache'
+repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
 repo = 'szw/vim-tags'

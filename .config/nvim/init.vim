@@ -121,10 +121,10 @@ if dein#check_install()
 endif
 
 " ==========================================
-" = Settings for neocomplcache             =
+" = Settings for deoplete                  =
 " ==========================================
-let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
-imap <C-n> <C-x><C-o>
+let g:deoplete#enable_at_startup = 1 " 起動時に有効化
+imap <C-n> <C-x><C-o>                " Enable omni search by Ctrl-n
 
 " ==========================================
 " = Settings for VimFiler                  =
