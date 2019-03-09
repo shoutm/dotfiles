@@ -1,13 +1,13 @@
 ###############################
 # Basic configuration         #
 ###############################
-export EDITOR='vim'
+export EDITOR='nvim'
 export GIT_EDITOR='vim'
 
 ###############################
 # alias                       #
 ###############################
-alias vi="vim"
+alias vi="nvim"
 alias tmux="tmux -2"
 alias u="cd .."
 alias uu="cd ../.."
