@@ -175,11 +175,6 @@ nnoremap <C-]>h :sp <CR><C-w>j g<C-]>
 nnoremap <C-]>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 " ==========================================
-" = Settings for vim-tags                  =
-" ==========================================
-map <F5> :TagsGenerate!<CR>
-
-" ==========================================
 " = Settings for fzf                       =
 " ==========================================
 if isdirectory('/usr/local/opt/fzf')

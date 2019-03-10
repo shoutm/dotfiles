@@ -26,10 +26,10 @@ repo = 'Shougo/vimfiler.vim'
 repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
-repo = 'szw/vim-tags'
-
-[[plugins]]
 repo = 'vim-scripts/taglist.vim'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
+
+[[plugins]]
+repo = 'ludovicchabant/vim-gutentags'
