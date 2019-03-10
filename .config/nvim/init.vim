@@ -71,23 +71,49 @@ endfunction "}}}
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
 
 " Tab jump
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
 for n in range(1, 9)
   execute 'nmap <silent> <c-w>'.n  ':<C-u>tabnext'.n.'<CR>'
 endfor
-" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
 
+" tc 新しいタブを一番右に作る
 map <silent> <c-w>c :tablast <bar> tabnew<CR>
 map <silent> <c-w><c-c> :tablast <bar> tabnew<CR>
-" tc 新しいタブを一番右に作る
-"map <silent> <c-w>x :tabclose<CR>
+
 " tx タブを閉じる
+"map <silent> <c-w>x :tabclose<CR>
+
+" tn 次のタブ
 map <silent> <c-w>n :tabnext<CR>
 map <silent> <c-w><c-n> :tabnext<CR>
-" tn 次のタブ
+
+" tp 前のタブ
 map <silent> <c-w>p :tabprevious<CR>
 map <silent> <c-w><c-p> :tabprevious<CR>
-" tp 前のタブ
 
+
+" ==========================================
+" = Window split settings                  =
+" ==========================================
+" Split horizontal / vertical
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+
+" Moving window
+map s<left> <C-w>h
+map s<up> <C-w>k
+map s<down> <C-w>j
+map s<right> <C-w>l
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
+
+" Resizing window
+nmap <C-w><left> <C-w><
+nmap <C-w><right> <C-w>>
+nmap <C-w><up> <C-w>+
+nmap <C-w><down> <C-w>-
 
 " ==========================================
 " = Dein settings                          =
