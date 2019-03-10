@@ -157,7 +157,7 @@ imap <C-n> <C-x><C-o>                " Enable omni search by Ctrl-n
 " ==========================================
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_edit_action = 'tabopen'
-nnoremap <TAB> :VimFilerExplorer<CR>
+nnoremap sf :VimFilerExplorer<CR>
 
 " ==========================================
 " = Settings for taglist                   =
@@ -188,7 +188,6 @@ elseif isdirectory('~/.fzf')
   set rtp+=~/.fzf
 endif
 map ; :Files<CR>
-
 
 " ==========================================
 " = Settings for perl                      =
