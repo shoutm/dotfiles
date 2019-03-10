@@ -180,6 +180,17 @@ nnoremap <C-]>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 map <F5> :TagsGenerate!<CR>
 
 " ==========================================
+" = Settings for fzf                       =
+" ==========================================
+if isdirectory('/usr/local/opt/fzf')
+  set rtp+=/usr/local/opt/fzf
+elseif isdirectory('~/.fzf')
+  set rtp+=~/.fzf
+endif
+map ; :Files<CR>
+
+
+" ==========================================
 " = Settings for perl                      =
 " ==========================================
 autocmd FileType perl setlocal textwidth=0
