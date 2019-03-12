@@ -21,15 +21,35 @@ repo = 'Shougo/unite.vim'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
+hook_add = '''
+  let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_edit_action = 'tabopen'
+  nnoremap sf :VimFilerExplorer<CR>
+'''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+  imap <C-n> <C-x><C-o>
+'''
 
 [[plugins]]
 repo = 'vim-scripts/taglist.vim'
+hook_add = '''
+  map <C-i> :TlistToggle<CR>
+'''
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
+hook_add = '''
+  if isdirectory("/usr/local/opt/fzf")
+    set rtp+=/usr/local/opt/fzf
+  elseif isdirectory("~/.fzf")
+    set rtp+=~/.fzf
+  endif
+  map ; :Files<CR>
+'''
 
 [[plugins]]
 repo = 'ludovicchabant/vim-gutentags'

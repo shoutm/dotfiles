@@ -147,24 +147,6 @@ if dein#check_install()
 endif
 
 " ==========================================
-" = Settings for deoplete                  =
-" ==========================================
-let g:deoplete#enable_at_startup = 1 " 起動時に有効化
-imap <C-n> <C-x><C-o>                " Enable omni search by Ctrl-n
-
-" ==========================================
-" = Settings for VimFiler                  =
-" ==========================================
-let g:vimfiler_as_default_explorer = 1
-let g:vimfiler_edit_action = 'tabopen'
-nnoremap sf :VimFilerExplorer<CR>
-
-" ==========================================
-" = Settings for taglist                   =
-" ==========================================
-map <C-i> :TlistToggle<CR>
-
-" ==========================================
 " = Settings for ctags                     =
 " ==========================================
 set tags=./tags;   "カレントディレクトリから上位に向かってctagsファイルを探して最初に見つけた物を読み込む
@@ -173,16 +155,6 @@ nnoremap <C-c> :tag<CR>
 nnoremap <C-]>v :vsp <CR><C-w>l g<C-]>
 nnoremap <C-]>h :sp <CR><C-w>j g<C-]>
 nnoremap <C-]>t :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
-
-" ==========================================
-" = Settings for fzf                       =
-" ==========================================
-if isdirectory('/usr/local/opt/fzf')
-  set rtp+=/usr/local/opt/fzf
-elseif isdirectory('~/.fzf')
-  set rtp+=~/.fzf
-endif
-map ; :Files<CR>
 
 " ==========================================
 " = Settings for perl                      =
