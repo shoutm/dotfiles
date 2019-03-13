@@ -10,3 +10,6 @@ on_ft = ['go']
 repo = 'kchmck/vim-coffee-script'
 on_ft = ['javascript']
 
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
