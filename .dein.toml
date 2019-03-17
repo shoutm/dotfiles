@@ -44,9 +44,10 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'vim-scripts/taglist.vim'
+repo = 'majutsushi/tagbar'
 hook_add = '''
-  map <C-i> :TlistToggle<CR>
+  map <C-i> :TagbarToggle<CR>
+  let g:tagbar_map_togglesort = "r"
 '''
 
 [[plugins]]
