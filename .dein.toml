@@ -57,7 +57,7 @@ hook_add = '''
   elseif isdirectory("~/.fzf")
     set rtp+=~/.fzf
   endif
-  map ; :Files<CR>
+  map gf :Files<CR>
 '''
 
 [[plugins]]
