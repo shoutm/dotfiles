@@ -19,6 +19,7 @@ alias uuuuu="cd ../../../../.."
 # goenv settings              #
 ###############################
 export GOPATH="$HOME/work/go"
+export PATH=$GOPATH/bin:$PATH
 if [[ -d "$HOME/.goenv" ]]; then
   export GOENV_ROOT="$HOME/.goenv"
   if [[ -d "$HOME/.goenv/bin" ]]; then
