@@ -5,6 +5,9 @@ on_ft = ['ruby']
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
+hook_add = '''
+  autocmd Filetype go nnoremap <C-]><C-]> :GoDef<CR>
+'''
 
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
