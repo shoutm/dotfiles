@@ -38,9 +38,8 @@ fi
 #   fi
 # }
 
+# Load Prezto
+[[ -r ${ZDOTDIR:-$HOME}/.zprezto/init.zsh ]] && source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 # Include local config
 [[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
-
-# Load Prezto
-[[ -r ${ZDOTDIR:-$HOME}/.zprezto/init.zsh ]] && source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
