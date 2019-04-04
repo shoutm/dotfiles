@@ -7,6 +7,7 @@ repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_add = '''
   autocmd Filetype go nnoremap <C-]><C-]> :GoDef<CR>
+  let g:go_fmt_command = "goimports"
 '''
 
 [[plugins]]
