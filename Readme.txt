@@ -24,6 +24,7 @@
 
 - Tmux settings
   1.Install tmux plugins
+    $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     $ tmux
     $ ^z I
 
