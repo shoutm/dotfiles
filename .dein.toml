@@ -66,3 +66,7 @@ repo = 'ludovicchabant/vim-gutentags'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = ['fzf']
