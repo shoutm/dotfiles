@@ -19,8 +19,11 @@
     $ mkdir -p ~/.cache/dein
     $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
     $ sh ./installer.sh ~/.cache/dein
-  2.Install python3-neovim for deoplete
-    $ pip3 install neovim
+  2.Install pynvim (see https://neovim.io/doc/user/provider.html)
+    $ python2 -m pip install --user --upgrade pynvim
+    $ python3 -m pip install --user --upgrade pynvim
+  3.(When you update your plugins)
+    :call dein#update()
 
 - Tmux settings
   1.Install tmux plugins
