@@ -55,11 +55,12 @@ repo = 'junegunn/fzf.vim'
 hook_add = '''
   if isdirectory("/usr/local/opt/fzf")
     set rtp+=/usr/local/opt/fzf
-  elseif isdirectory("~/.fzf")
+  elseif isdirectory(expand("~/.fzf"))
     set rtp+=~/.fzf
   endif
   map gf :Files<CR>
 '''
+# see https://thinca.hatenablog.com/entry/20091009/1255059006 for "expand"
 
 [[plugins]]
 repo = 'ludovicchabant/vim-gutentags'
@@ -68,5 +69,4 @@ repo = 'ludovicchabant/vim-gutentags'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'junegunn/fzf.vim'
-depends = ['fzf']
+repo = 'tpope/vim-dispatch'

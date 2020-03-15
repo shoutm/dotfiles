@@ -7,6 +7,17 @@ repo = 'tpope/vim-rails'
 on_ft = ['ruby']
 
 [[plugins]]
+repo = 'thoughtbot/vim-rspec'
+on_ft = ['ruby']
+hook_add = '''
+  command SpecFile :call RunCurrentSpecFile()<CR>
+  command SpecHere :call RunNearestSpec()<CR>
+  command SpecLast :call RunLastSpec()<CR>
+  command SpecAll  :call RunAllSpecs()<CR>
+  let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
+'''
+
+[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_add = '''
