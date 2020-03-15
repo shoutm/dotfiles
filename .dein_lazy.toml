@@ -10,10 +10,10 @@ on_ft = ['ruby']
 repo = 'thoughtbot/vim-rspec'
 on_ft = ['ruby']
 hook_add = '''
-  command SpecFile :call RunCurrentSpecFile()<CR>
-  command SpecHere :call RunNearestSpec()<CR>
-  command SpecLast :call RunLastSpec()<CR>
-  command SpecAll  :call RunAllSpecs()<CR>
+  command TestFile :call RunCurrentSpecFile()<CR>
+  command TestHere :call RunNearestSpec()<CR>
+  command TestLast :call RunLastSpec()<CR>
+  command TestAll  :call RunAllSpecs()<CR>
   let g:rspec_command = 'Dispatch bundle exec rspec {spec}'
 '''
 
