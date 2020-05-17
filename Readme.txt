@@ -25,6 +25,10 @@
   3.(When you update your plugins)
     :call dein#update()
 
+  - vim-go settings
+    - :GoInstallBinaries
+      - See "Install" section in https://github.com/fatih/vim-go
+
 - Tmux settings
   1.Install tmux plugins
     $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
