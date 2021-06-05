@@ -1,11 +1,9 @@
 - Zsh(Prezto) settings
   1. Git clone prezto
-      git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+      $ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
   2. Initial settings
       $ setopt EXTENDED_GLOB
-      $ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-      >   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-      >  done
+      $ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done
   3. Override .zpreztorc
       $ cp ~/dotfiles/.zpreztorc ~/
   4. Make an external module directory
