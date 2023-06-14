@@ -14,6 +14,7 @@ alias uu="cd ../.."
 alias uuu="cd ../../.."
 alias uuuu="cd ../../../.."
 alias uuuuu="cd ../../../../.."
+alias k="kubectl"
 
 ###############################
 # goenv settings              #
