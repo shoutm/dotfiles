@@ -16,6 +16,9 @@ alias uuuu="cd ../../../.."
 alias uuuuu="cd ../../../../.."
 alias k="kubectl"
 
+# Load Prezto
+[[ -r ${ZDOTDIR:-$HOME}/.zprezto/init.zsh ]] && source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
 ###############################
 # goenv settings              #
 ###############################
@@ -33,15 +36,12 @@ export GOPATH="$HOME/work/go"
 # This should be after `eval "$(goenv init -)"` https://github.com/syndbg/goenv/blob/master/INSTALL.md
 export PATH=$GOPATH/bin:$PATH
 
-# # Auto activation of virtualenv when changing directory
-# function chpwd() {
-#   if [[ -d .venv ]]; then
-#     source .venv/bin/activate
-#   fi
-# }
-
-# Load Prezto
-[[ -r ${ZDOTDIR:-$HOME}/.zprezto/init.zsh ]] && source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+###############################
+# kubectl settings            #
+###############################
+if which kubectl > /dev/null; then
+  source <(kubectl completion zsh)
+fi
 
 # Include local config
 [[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
