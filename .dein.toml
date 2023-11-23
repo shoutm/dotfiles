@@ -69,4 +69,4 @@ repo = 'ludovicchabant/vim-gutentags'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'tpope/vim-dispatch'
+repo = 'github/copilot.vim'
